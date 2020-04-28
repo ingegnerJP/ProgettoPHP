@@ -1,43 +1,60 @@
 <?php 
 session_start();
 
-$scelta = $_POST["scelta"];//prende la scelta del giocatore
+
+/*PER TESTARE IL PROGRAMMA*/
+/*
+$_SESSION["player"] = 0;
+$_SESSION["computer"] = 0;
+*/
+
+
+if(isset($_POST["scelta"])){
+	$scelta = $_POST["scelta"];//prende la scelta del giocatore
+}else{
+	$scelta = "";
+}
+
 
 /*Scelta del computer*/
-$arrayAI = array("rock", "paper", "scissors");
+$arrayAI = array("sasso", "carta", "forbici");
 $random = array_rand($arrayAI, 1); //Il computer sceglie a random una delle opzioni
+
 $sceltaAI = $arrayAI[$random];
 
  /*punteggio del giocatore*/
 if(isset($_SESSION["player"])){
-  if($scelta == "rock" && $sceltaAI == "scissors"){
+  if($scelta == "sasso" && $sceltaAI == "forbici"){
 	$_SESSION["player"]++;
   }
-  if($scelta == "paper" && $sceltaAI == "rock"){
+  if($scelta == "carta" && $sceltaAI == "sasso"){
 	$_SESSION["player"]++;
   }
-  if($scelta == "scissors" && $sceltaAI == "paper"){
+  if($scelta == "forbici" && $sceltaAI == "carta"){
 	$_SESSION["player"]++;
   }
 }else{
   $_SESSION["player"] = 0;
 }
 
- /*punteggio del giocatore*/
+ /*punteggio del computer*/
 if(isset($_SESSION["computer"])){
-  if($scelta == "scissors" && $sceltaAI == "rock"){
+  if($sceltaAI == "sasso" && $scelta == "forbici"){
 	$_SESSION["computer"]++;
   }
-  if($scelta == "rock" && $sceltaAI == "paper"){
+  if($sceltaAI == "carta" && $scelta == "sasso"){
 	$_SESSION["computer"]++;
   }
-  if($scelta == "paper" && $sceltaAI == "scissors"){
+  if($sceltaAI == "forbici" && $scelta == "carta"){
 	$_SESSION["computer"]++;
   }
 }else{
   $_SESSION["computer"] = 0;
 }
 
+if($_SESSION["player"] == 2 || $_SESSION["computer"] == 2){
+	header("location: WinLoss.php");
+}
 
 
 ?>
@@ -53,15 +70,21 @@ if(isset($_SESSION["computer"])){
 		<form action="Game.php" method="POST">
 		<p class="up-text">SCEGLI UNA CARTA...</p>
 		<div class="container centro">
-			<button type="submit" class="rock" name="scelta" id="rock" value="rock" onmouseover="text(this)"  onmouseleave="vuoto(this)">
-			<button type="submit" class="paper" name="scelta" id="paper" value="paper" onmouseover="text(this)"  onmouseleave="vuoto(this)">
-			<button type="submit" class="scissors" name="scelta" id="scissors" value="scissors" onmouseover="text(this)"  onmouseleave="vuoto(this)">
+			<button type="submit" class="rock" name="scelta" id="rock" value="sasso" onmouseover="text(this)"  onmouseleave="vuoto(this)">
+			<button type="submit" class="paper" name="scelta" id="paper" value="carta" onmouseover="text(this)"  onmouseleave="vuoto(this)">
+			<button type="submit" class="scissors" name="scelta" id="scissors" value="forbici" onmouseover="text(this)"  onmouseleave="vuoto(this)">
 		</div>
 		</form>
 		<div class="bottom-div"><p id="paragraph"><script type="text/javascript" src="game.js"></script></p></div>
 		<div class="punteggio">
-			<div name="player">TU : <?php echo $_SESSION["player"]; ?> </div>
+			<div name="player">TU: <?php echo $_SESSION["player"]; ?> </div>
 			<div name="computer">COMPUTER: <?php echo $_SESSION["computer"]; ?> </div>
+		<div>
+		
+		<div class="sceltaAI">
+			<div>
+				<?php echo "Computer: ".$sceltaAI;?>
+			</div>
 		<div>
 		
 	
