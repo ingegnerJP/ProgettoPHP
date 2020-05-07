@@ -1,15 +1,32 @@
 <?php
-
-	$rock = $_REQUEST["rock"];
-	$paper = $_REQUEST["paper"];
-	$scissors = $_REQUEST["scissors"];
+	session_start();
 	
+		function endSessionGame() {
+			$_SESSION = array();
+			session_destroy();
+			header("location: Game.php");
+		}
+		
+		if(isset($_GET["game"])){
+			endSessionGame();
+		}
+		
+		function endSessionMenu() {
+			$_SESSION = array();
+			session_destroy();
+			header("location: Menu.php");
+		}
+		
+		if(isset($_GET["menu"])){
+			endSessionMenu();
+		}
+
 ?>
 <!doctype html>
 <html>
 	<head>
 		<title>
-			<?php if($giocatore > $computer){
+			<?php if($_SESSION["player"] > $_SESSION["computer"]){
 					echo "HAI VINTO";
 				  }else{
 					echo"HAI PERSO";
@@ -18,12 +35,33 @@
 		</title> 
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-		<link rel="stylesheet" media="all" type="text/css" href="menu.css">	
+		<link rel="stylesheet" media="all" type="text/css" href="winloss.css">	
 	</head>
-	<body style="background-color:#ffcc99;">
-		<h1 style="text-align:center; margin-top:50px; font-size:50px;"></h1><br>
+	<body>
+		<div class="centro">
+			<div class="text">
+			<?php if($_SESSION["player"] > $_SESSION["computer"]){
+					?><style>body{background-color:#ffcc99;}</style><?php
+					echo "HAI VINTO";?>
+					<p>
+						<a href="WinLoss.php?game=true" class="retrybuttonWin" style="text-decoration:none" onclick="endSessionGame()">Riprova</a>
+						<a href="WinLoss.php?menu=true" class="menubutton" style="text-decoration:none" onclick="endSessionMenu()">Torna al menu</a>
+					</p>
+					<?php
+				  }else{
+				  ?><style>body{background-color:#F4F0EC;}</style><?php
+					echo"HAI PERSO";?>
+					<p>
+						<a href="WinLoss.php?game=true" class="retrybuttonLoss" style="text-decoration:none" onclick="endSessionGame()">Riprova (se vuoi soffrire)</a>
+						<a href="WinLoss.php?menu=true" class="menubutton" style="text-decoration:none" onclick="endSessionMenu()">Torna al menu</a>
+					</p>
+				  <?php
+				  }
+			?>
 
-	
+			</div>
+		</div>
+
 	
 	
 	
