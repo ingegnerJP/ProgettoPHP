@@ -1,14 +1,44 @@
+<?php
+session_start();
+
+//Gestione Login
+/*if(isset($_POST["logout"])){
+	$_SESSION["loggato"] = false;
+}
+
+if(isset($_SESSION["loggato"]) && ($_SESSION["loggato"] == true)){
+	//:(
+}else{
+	header("location: Login.php");
+}*/
+
+
+
+?>
+
 <!doctype html>
 <html>
 	<head>
 		<title>Sasso carta forbice</title> 
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-		<link rel="stylesheet" media="all" type="text/css" href="menu.css">	
+		<link rel="stylesheet" media="all" type="text/css" href="menu.css">
+		
 	</head>
 	<body>
+		<div class="dropdown show">
+		  <a class="options" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-decoration:none; float:right;">
+			<img src="img/ingranaggio.png" style="width:30px; height: 30px;">
+		  </a>
+
+		  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="font-family:dark_poestry; font-size:12px;">
+			<a class="dropdown-item" href="#">Login</a>
+			<a class="dropdown-item" href="#">Registrati</a>
+		  </div>
+		</div>
+
 	<div id="parent">
-		<div class="container" style="text-align:center;">
+		<div class="centro" style="text-align:center;">
 			<span class="maintext">SASSO CARTA FORBICE</span>
 			<span class="buttons">
 				<a href="Game.php" class="playbutton" style="text-decoration:none;">GIOCA</a><br>

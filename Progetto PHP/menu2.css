@@ -1,6 +1,14 @@
 
+@font-face {
+    font-family: 'dark_poestry';
+    src: url('fonts/dark_poestry.woff2') format('woff2'),
+         url('fonts/dark_poestry.woff') format('woff');
+}
+
 html {
     height: 100%;
+	font-family:dark_poestry;
+	letter-spacing:2px;
 }
 
 
@@ -9,122 +17,100 @@ body {
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
-	background-color:#ffcc99;
+	/*background-color:#ffcc99;*/
+/*background: rgb(255,204,153);
+background: linear-gradient(315deg, rgba(255,204,153,1) 0%, rgba(255,204,153,1) 49%, rgba(183,239,255,1) 51%);*/
+
+background: rgb(255,204,153);
+background: linear-gradient(315deg, rgba(255,204,153,1) 20%, rgba(183,239,255,1) 50%, rgba(255,204,153,1) 80%);
+
 }
-
-
 
 
 /*bottone gioca*/ 
 .playbutton {
-	box-shadow: 3px 4px 0px 0px #2eb82e;
-	background-color:#33cc33;
+	box-shadow: 3px 4px 0px 0px #333;
+	background-color:#ffcc99;
 	border-radius:15px;
-	border:2px solid #2eb82e;
+	border:2px solid #333;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
+	color:#333;
+	font-family:dark_poestry;
 	font-size:50px;
 	font-weight:bold;
 	padding:12px 26px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #269426;
-	/*animation: playbutton 3s 1;*/
+	text-shadow:0px 1px 0px #333;
 }
 .playbutton:hover {
-	background-color:#31c431;
+	background-color:#33cc33;
+	text-shadow: 0px 1px 0px #269426;
 	color: #f2f2f2;
 }
 .playbutton:active {
 	position:relative;
 	top:2px;
 	left:2px;
-	box-shadow: 3px 4px 0px -7px #2eb82e;
-}
-
-@keyframes playbutton{
-	
-	0%{
-		color: #ffcc99;
-		box-shadow: 0px 0px 0px 0px #ffcc99;
-		border:0px solid #ffcc99;
-		background-color:#ffcc99;
-		border-radius:15px;
-		font-size:75px;
-		font-weight:bold;
-		text-shadow:0px 1px 0px #ffcc99;
-	}
+	box-shadow: 3px 4px 0px -7px #333;
 }
 
 /*bottone classifica*/ 
 .rankbutton {
-	box-shadow: 3px 4px 0px 0px #e60000;
-	background-color:#ff1c1c;
+	box-shadow: 3px 4px 0px 0px #333;
+	background-color:#ffcc99;
 	border-radius:15px;
-	border:2px solid #e60000;
+	border:2px solid #333;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
+	color:#333;
+	font-family:dark_poestry;
 	font-size:20px;
 	font-weight:bold;
 	padding:12px 16px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #b30000;
-	/*animation: rankbutton 3s 1;*/
+	text-shadow:0px 1px 0px #333;
 }
 .rankbutton:hover {
 	background-color:#ff1313;
+	text-shadow: 0px 1px 0px #b30000;
 	color: #f2f2f2;
 }
 .rankbutton:active {
 	position:relative;
 	top:2px;
 	left:2px;
-	box-shadow: 3px 4px 0px -7px #e60000;
-}
-
-@keyframes rankbutton{
-	
-	0%{
-		color: #ffcc99;
-		box-shadow: 0px 0px 0px 0px #ffcc99;
-		border:0px solid #ffcc99;
-		background-color:#ffcc99;
-		border-radius:15px;
-		font-size:40px;
-		font-weight:bold;
-		text-shadow:0px 1px 0px #ffcc99;
-	}
+	box-shadow: 3px 4px 0px -7px #333;
 }
 
 /*bottone regole*/ 
 .infobutton {
-	box-shadow: 3px 4px 0px 0px #29a9ad;
-	background-color:#2ab8bd;
+	box-shadow: 3px 4px 0px 0px #333;
+	background-color:#ffcc99;
 	border-radius:15px;
-	border:2px solid #29a9ad;
+	border:2px solid #333;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
+	color:#333;
+	font-family:dark_poestry;
+	letter-spacing:2px;
 	font-size:20px;
 	font-weight:bold;
-	padding:12px 30px;
+	padding:12px 36px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #217578;
+	text-shadow:0px 1px 0px #333;
 	/*animation: infobutton 3s 1;*/
 }
 .infobutton:hover {
 	background-color:#28b4b7;
+	text-shadow: 0px 1px 0px #217578;
 	color: #f2f2f2;
 }
 .infobutton:active {
 	position:relative;
 	top:2px;
 	left:2px;
-	box-shadow: 3px 4px 0px -7px #29a9ad;
+	box-shadow: 3px 4px 0px -7px #333;
 }
 
 @keyframes infobutton{
@@ -157,9 +143,9 @@ body {
 .maintext {
 	/*text-align:center; */
 	margin-top:0px; 
-	font-size:60px;
+	font-size:70px;
+	font-family:dark_poestry;
 	font-weight:600;
-	text-decoration:bold;
 	margin-bottom: 40px;
 	position: relative;
 	/*animation: intro 3s 1;*/
@@ -187,10 +173,10 @@ a {
 
 /*bottone optzioni*/ 
 .options {
-	box-shadow: 3px 4px 0px 0px #8c8c8c;
+	box-shadow: 3px 4px 0px 0px #333;
 	background-color:#bfbfbf;
 	border-radius:15px;
-	border:2px solid #8c8c8c;
+	border:2px solid #333;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
@@ -212,7 +198,7 @@ a {
 	position:relative;
 	top:2px;
 	left:2px;
-	box-shadow: 3px 4px 0px -7px #8c8c8c;
+	box-shadow: 3px 4px 0px -7px #333;
 }
 
 .info {
@@ -226,13 +212,14 @@ a {
 	margin-right: 20px;
 	background-color:#333;
 	padding: 10px 10px;
+	border-radius:15px;
 }
 
 .dropdown-item {
 	color:white;
 	padding: 0px;
 	margin-top:3px;
-	margin-bottom:7px;
+	margin-bottom:6px;
 }
 
 .dropdown-item:hover{
