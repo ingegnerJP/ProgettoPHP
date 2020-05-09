@@ -1,6 +1,14 @@
 
+@font-face {
+    font-family: 'dark_poestry';
+    src: url('fonts/dark_poestry.woff2') format('woff2'),
+         url('fonts/dark_poestry.woff') format('woff');
+}
+
+
 html {
     height: 100%;
+	letter-spacing:2px;
 }
 
 
@@ -9,7 +17,8 @@ body {
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
-	background-color:#ffcc99;
+	background: rgb(255,163,26);
+	background: linear-gradient(90deg, rgba(255,163,26,1) 0%, rgba(255,209,26,1) 100%);
 }
 
 
@@ -17,19 +26,19 @@ body {
 
 /*bottone gioca*/ 
 .playbutton {
-	box-shadow: 3px 4px 0px 0px #2eb82e;
+	box-shadow: 3px 4px 0px 0px #29a329;
 	background-color:#33cc33;
 	border-radius:15px;
-	border:2px solid #2eb82e;
+	border:2px solid #29a329;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family:Arial;
+	font-family:dark_poestry;
 	font-size:50px;
 	font-weight:bold;
 	padding:12px 26px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #269426;
+	text-shadow:2px 1px 0px #269426;
 	/*animation: playbutton 3s 1;*/
 }
 .playbutton:hover {
@@ -40,7 +49,7 @@ body {
 	position:relative;
 	top:2px;
 	left:2px;
-	box-shadow: 3px 4px 0px -7px #2eb82e;
+	box-shadow: 3px 4px 0px -7px #29a329;
 }
 
 @keyframes playbutton{
@@ -66,12 +75,12 @@ body {
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family:Arial;
+	font-family:dark_poestry;
 	font-size:20px;
 	font-weight:bold;
 	padding:12px 16px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #b30000;
+	text-shadow:2px 1px 0px #b30000;
 	/*animation: rankbutton 3s 1;*/
 }
 .rankbutton:hover {
@@ -101,19 +110,19 @@ body {
 
 /*bottone regole*/ 
 .infobutton {
-	box-shadow: 3px 4px 0px 0px #29a9ad;
+	box-shadow: 3px 4px 0px 0px #27a1a5;
 	background-color:#2ab8bd;
 	border-radius:15px;
-	border:2px solid #29a9ad;
+	border:2px solid #27a1a5;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family:Arial;
+	font-family:dark_poestry;
 	font-size:20px;
 	font-weight:bold;
 	padding:12px 30px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #217578;
+	text-shadow:2px 1px 0px #217578;
 	/*animation: infobutton 3s 1;*/
 }
 .infobutton:hover {
@@ -124,7 +133,7 @@ body {
 	position:relative;
 	top:2px;
 	left:2px;
-	box-shadow: 3px 4px 0px -7px #29a9ad;
+	box-shadow: 3px 4px 0px -7px #27a1a5;
 }
 
 @keyframes infobutton{
@@ -162,6 +171,9 @@ body {
 	text-decoration:bold;
 	margin-bottom: 40px;
 	position: relative;
+	font-family:dark_poestry;
+	letter-spacing:2px;
+	color:#333;
 	/*animation: intro 3s 1;*/
 }
 
@@ -199,7 +211,7 @@ a {
 	font-weight:bold;
 	padding:10px 10px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #8c8c8c;
+	text-shadow:2px 1px 0px #8c8c8c;
 	margin-right:20px;
 	margin-top:20px;
 	
@@ -224,8 +236,9 @@ a {
 .dropdown-menu {
 	margin-top:15px;
 	margin-right: 20px;
-	background-color:#333;
+	background-color:#404040;
 	padding: 10px 10px;
+	border-radius:15px;
 }
 
 .dropdown-item {
@@ -236,8 +249,8 @@ a {
 }
 
 .dropdown-item:hover{
-	background-color:#333;
-	color:#ffcc99;
+	background-color:#404040;
+	color:#ffd11a;
 }
 
 

@@ -4,10 +4,10 @@
 		<title>Sasso carta forbice</title> 
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-		<link rel="stylesheet" media="all" type="text/css" href="menu.css">	
+		<link rel="stylesheet" media="all" type="text/css" href="rules.css">	
 	</head>
-	<body style="background-color:#ffcc99;">
-		<h1 style="text-align:center; margin-top:50px; font-size:50px;">REGOLE</h1><br>
+	<body>
+		<p class="maintext">REGOLE</p>
 
 	
 	

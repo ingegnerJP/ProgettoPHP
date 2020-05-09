@@ -1,10 +1,12 @@
 <?php
 	session_start();
 	
+		//print_r($_SESSION);
+	
 		function endSessionGame() {
 			$_SESSION = array();
 			session_destroy();
-			header("location: Game.php");
+			header("location: Modalita.php");
 		}
 		
 		if(isset($_GET["game"])){
@@ -50,9 +52,10 @@
 					<?php
 				  }else{
 				  ?><style>body{background-color:#F4F0EC;}</style><?php
-					echo"HAI PERSO";?>
+					echo"HAI PERSO";?><br>
+					<?php echo"<p style='font-size:14px; margin-top:10px; margin-bottom:-5px;'>(la prossima volta andra' meglio)</p>"?>
 					<p>
-						<a href="WinLoss.php?game=true" class="retrybuttonLoss" style="text-decoration:none" onclick="endSessionGame()">Riprova (se vuoi soffrire)</a>
+						<a href="WinLoss.php?game=true" class="retrybuttonLoss" style="text-decoration:none" onclick="endSessionGame()">Riprova</a>
 						<a href="WinLoss.php?menu=true" class="menubutton" style="text-decoration:none" onclick="endSessionMenu()">Torna al menu</a>
 					</p>
 				  <?php
