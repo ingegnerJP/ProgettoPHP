@@ -2,7 +2,7 @@
 session_start();
 
 //Gestione Login 
-/*if(isset($_POST["logout"])){
+if(isset($_POST["logout"])){
 	$_SESSION["loggato"] = false;
 }
 
@@ -10,7 +10,7 @@ if(isset($_SESSION["loggato"]) && ($_SESSION["loggato"] == true)){
 	//:(
 }else{
 	header("location: Login.php");
-}*/
+}
 
 
 ?>
@@ -31,8 +31,8 @@ if(isset($_SESSION["loggato"]) && ($_SESSION["loggato"] == true)){
 		  </a>
 
 		  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="font-family:dark_poestry; font-size:12px;">
-			<a class="dropdown-item" href="#">Login</a>
-			<a class="dropdown-item" href="#">Registrati</a>
+			<a class="dropdown-item" href="Login.php">Login</a>
+			<a class="dropdown-item" href="Register.php">Registrati</a>
 		  </div>
 		</div>
 
