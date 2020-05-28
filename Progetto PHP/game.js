@@ -4,13 +4,13 @@ function text(element) {
 	var testo = '';
 	var container = document.getElementById('paragraph');
 	if(element.id == 'rock'){
-		testo = 'SASSO';
+		testo = 'SASSO AMBIGUO';
 	}
 	if(element.id == 'paper'){
-		testo = 'CARTA';
+		testo = 'COMPITO DI SISTEMI';
 	}
 	if(element.id == 'scissors'){
-		testo = 'FORBICI';
+		testo = 'HAI LE FORBICI?';
 	}
 	
 	container.innerHTML = testo;

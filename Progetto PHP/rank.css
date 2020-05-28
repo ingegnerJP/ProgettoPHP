@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'dark_poestry';
+    src: url('fonts/dark_poestry.woff2') format('woff2'),
+         url('fonts/dark_poestry.woff') format('woff');
+}
+
+
+html {
+    height: 100%;
+	letter-spacing:2px;
+}
+
+
+body {
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	background: rgb(255,163,26);
+	background: linear-gradient(90deg, rgba(255,163,26,1) 0%, rgba(255,209,26,1) 100%);
+}
+
+.maintext {
+	text-align:center; 
+	margin-top:50px; 
+	font-size:50px;
+	font-family:dark_poestry;
+	color:#333;
+}

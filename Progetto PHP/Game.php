@@ -8,7 +8,15 @@ $_SESSION["player"] = 0;
 $_SESSION["computer"] = 0;
 */
 
+//crea la variabile per gestire il punteggio delle varie modalità
+if(isset($_SESSION["meglio"])){ 
+ 
+}else{
+	$_SESSION["meglio"] = $_POST["meglio"];
+}
 
+
+/*scelta giocatore*/
 if(isset($_POST["scelta"])){
 	$scelta = $_POST["scelta"];//prende la scelta del giocatore
 }else{
@@ -17,10 +25,11 @@ if(isset($_POST["scelta"])){
 
 
 /*Scelta del computer*/
+
 $arrayAI = array("sasso", "carta", "forbici");
 $random = array_rand($arrayAI, 1); //Il computer sceglie a random una delle opzioni
-
 $sceltaAI = $arrayAI[$random];
+
 
  /*punteggio del giocatore*/
 if(isset($_SESSION["player"])){
@@ -52,8 +61,23 @@ if(isset($_SESSION["computer"])){
   $_SESSION["computer"] = 0;
 }
 
-if($_SESSION["player"] == 2 || $_SESSION["computer"] == 2){
-	header("location: WinLoss.php");
+/*Controllo modalità di gioco*/
+if($_SESSION["meglio"] == "meglio3"){
+	if($_SESSION["player"] == 2 || $_SESSION["computer"] == 2){
+		header("location: WinLoss.php");
+	}
+}
+
+if($_SESSION["meglio"] == "meglio5"){
+	if($_SESSION["player"] == 3 || $_SESSION["computer"] == 3){
+		header("location: WinLoss.php");
+	}
+}
+
+if($_SESSION["meglio"] == "meglio7"){
+	if($_SESSION["player"] == 4 || $_SESSION["computer"] == 4){
+		header("location: WinLoss.php");
+	}
 }
 
 
@@ -66,7 +90,7 @@ if($_SESSION["player"] == 2 || $_SESSION["computer"] == 2){
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<link rel="stylesheet" media="all" type="text/css" href="game.css"> 
 	</head>
-	<body style="background-color:#ffcc99;">
+	<body>
 		<form action="Game.php" method="POST">
 		<p class="up-text">SCEGLI UNA CARTA...</p>
 		<div class="container centro">
@@ -83,9 +107,25 @@ if($_SESSION["player"] == 2 || $_SESSION["computer"] == 2){
 		
 		<div class="sceltaAI">
 			<div>
-				<?php echo "Computer: ".$sceltaAI;?>
+				<p><?php echo "Computer: "; ?></p>
+				<?php
+				  if($_SESSION["player"] == 0 && $_SESSION["computer"] == 0 && $scelta != $sceltaAI){
+					  echo " ";
+				  }else{
+					  if($sceltaAI == "sasso"){
+					    echo "<button type='button' class='mostrascelta'><img src='img/rock.png' style='width:100px; height:100px;'></button>";
+					  }
+					  if($sceltaAI == "carta"){
+						echo "<button type='button' class='mostrascelta'><img src='img/paper.png' style='width:100px; height:100px;'></button>";
+					  }
+					  if($sceltaAI == "forbici"){
+						echo "<button type='button' class='mostrascelta'><img src='img/scissors.png' style='width:100px; height:100px;'></button>";
+					  }
+				  }
+
+				 ?>
 			</div>
-		<div>
+		</div>
 		
 	
 	

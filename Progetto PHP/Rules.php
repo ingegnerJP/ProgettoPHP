@@ -4,16 +4,10 @@
 		<title>Sasso carta forbice</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-		<link rel="stylesheet" media="all" type="text/css" href="menu.css">
+		<link rel="stylesheet" media="all" type="text/css" href="rules.css">
 	</head>
-	<body style="background-color:#ffcc99;">
-		<h1 style="text-align:center; margin-top:50px; font-size:50px;">REGOLE</h1><br>
-<div style="text-align:center; margin-top:50px; font-size:25px;">
-	scegli una delle tre carte sullo schermo per decidere la tua moss.
-</div>
-
-
-
+	<body>
+		<p class="maintext">REGOLE</p>
 
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
