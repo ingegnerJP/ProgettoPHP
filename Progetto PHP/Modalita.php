@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+//print_r($_SESSION);
 
 
 if(isset($_POST["meglio"])){ //esiste? 
@@ -31,9 +32,9 @@ if(isset($_POST["meglio"])){ //esiste?
 			<span class="maintext">SCEGLI UNA MODALITA'</span>
 			<form action="Game.php" method="POST" id="form">
 				<span class="buttons"> 
-					<button type="submit" class="meglio3" style="text-decoration:none;" name="meglio" value="meglio3" >ALLA MEGLIO DI 3</button><br>
-					<button type="submit" class="meglio5" style="text-decoration:none;"  name="meglio" value="meglio5" >ALLA MEGLIO DI 5</button><br>
-					<button type="submit" class="meglio7" style="text-decoration:none;" name="meglio" value="meglio7" >ALLA MEGLIO DI 7</button><br>
+					<button type="submit" class="meglio3" style="text-decoration:none; outline:none;" name="meglio" value="meglio3" >ALLA MEGLIO DI 3</button><br>
+					<button type="submit" class="meglio5" style="text-decoration:none; outline:none;"  name="meglio" value="meglio5" >ALLA MEGLIO DI 5</button><br>
+					<button type="submit" class="meglio7" style="text-decoration:none; outline:none;" name="meglio" value="meglio7" >ALLA MEGLIO DI 7</button><br>
 				</span>
 			</form>
 		</div>

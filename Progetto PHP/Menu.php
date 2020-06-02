@@ -2,9 +2,10 @@
 session_start();
 
 //Gestione Login 
-if(isset($_POST["logout"])){
+/*if(isset($_POST["logout"])){
 	$_SESSION["loggato"] = false;
-}
+}*/
+//print_r($_SESSION);
 
 if(isset($_SESSION["loggato"]) && ($_SESSION["loggato"] == true)){
 	//:(
@@ -12,6 +13,13 @@ if(isset($_SESSION["loggato"]) && ($_SESSION["loggato"] == true)){
 	header("location: Login.php");
 }
 
+
+
+function endSession() {
+	$_SESSION = array();
+	session_destroy();
+	header("location: Login.php");
+}
 
 ?>
 
@@ -31,8 +39,8 @@ if(isset($_SESSION["loggato"]) && ($_SESSION["loggato"] == true)){
 		  </a>
 
 		  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="font-family:dark_poestry; font-size:12px;">
-			<a class="dropdown-item" href="Login.php">Login</a>
-			<a class="dropdown-item" href="Register.php">Registrati</a>
+			<div style="color:white; margin-bottom:15px;"><?php echo "Benvenuto ".$_SESSION["persona"];  ?></div>
+			<a class="dropdown-item" href="Login.php" onclick="endSession()">Logout</a>
 		  </div>
 		</div>
 

@@ -8,6 +8,12 @@ $_SESSION["player"] = 0;
 $_SESSION["computer"] = 0;
 */
 
+//prende l'utente corrente
+
+//gestione del punteggio
+$_SESSION["vittoria"] = false;
+
+
 //crea la variabile per gestire il punteggio delle varie modalità
 if(isset($_SESSION["meglio"])){ 
  
@@ -64,21 +70,43 @@ if(isset($_SESSION["computer"])){
 /*Controllo modalità di gioco*/
 if($_SESSION["meglio"] == "meglio3"){
 	if($_SESSION["player"] == 2 || $_SESSION["computer"] == 2){
+		if($_SESSION["player"] > $_SESSION["computer"]){
+			$_SESSION["vittoria"] = true;
+		}
 		header("location: WinLoss.php");
 	}
 }
 
 if($_SESSION["meglio"] == "meglio5"){
 	if($_SESSION["player"] == 3 || $_SESSION["computer"] == 3){
+		if($_SESSION["player"] > $_SESSION["computer"]){
+			$_SESSION["vittoria"] = true;
+		}
 		header("location: WinLoss.php");
 	}
 }
 
 if($_SESSION["meglio"] == "meglio7"){
 	if($_SESSION["player"] == 4 || $_SESSION["computer"] == 4){
+		if($_SESSION["player"] > $_SESSION["computer"]){
+			$_SESSION["vittoria"] = true;
+		}
 		header("location: WinLoss.php");
 	}
 }
+
+	if(isset($_GET["game"])){
+		restartGame();
+	}
+
+
+	function restartGame() {
+	  unset($_SESSION["player"]);
+	  unset($_SESSION["computer"]);
+	  unset($_SESSION["vittoria"]);
+	  header("Location: Game.php");
+	}
+
 
 
 ?>
@@ -103,6 +131,7 @@ if($_SESSION["meglio"] == "meglio7"){
 		<div class="punteggio">
 			<div name="player">TU: <?php echo $_SESSION["player"]; ?> </div>
 			<div name="computer">COMPUTER: <?php echo $_SESSION["computer"]; ?> </div>
+            <a href="Game.php?game=true" class="reset" style="" onclick="restartGame()">Reset</a>
 		<div>
 		
 		<div class="sceltaAI">

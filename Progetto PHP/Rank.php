@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+require_once "SleekDB.php";
+$dataDir = "mydb";
+$newsStore = \SleekDB\SleekDB::store('news', $dataDir);
+
+
+?>
+
 <!doctype html>
 <html>
 	<head>
@@ -7,8 +17,28 @@
 		<link rel="stylesheet" media="all" type="text/css" href="rank.css">	
 	</head>
 	<body>
-		<p class="maintext">CLASSIFICA GLOBALE</p>
+		<a class="back" href="Menu.php"  style="text-decoration:none; float:right;">
+			<img src="img/freccia.png" style="width:30px; height: 30px;">
+		</a>
 
+
+		<div class="centro" style="text-align:center;">
+			<span class="maintext">CLASSIFICA GLOBALE</span>
+		</div>
+		<div class="centro1" style="text-align:center;">
+			<table style="widht:100%;">
+			  <tr>
+				<th style="color:#289ead; text-shadow:1px 1px 0px #1c6b75;">Utente</th>
+				<th style="color:#2eb82e; text-shadow:1px 1px 0px #1f7a1f;">Vittorie</th>   
+			  </tr>
+			<?php
+				$news = $newsStore->orderBy( 'desc', 'score' )->limit( 10 )->fetch();
+				//stampa array dati
+				foreach($news as $key => $value){
+				  echo "<tr><td>".$value["user"]."</td><td>".$value["score"]."</td></tr>";                                                                                                           
+				}
+			?>
+		</div>
 	
 	
 	

@@ -1,11 +1,40 @@
 <?php
 	session_start();
 	
-		//print_r($_SESSION);
+	require_once "SleekDB.php";
+	$dataDir = "mydb";
+	$newsStore = \SleekDB\SleekDB::store('news', $dataDir);
+	$news = $newsStore->fetch();
 	
+	$utente = $_SESSION["persona"];
+	
+	
+
+
+	//print_r($_SESSION);
+	/////////
+	if($_SESSION["vittoria"] == true){
+		
+		foreach ($news as $key => $value) {
+			if($_SESSION["persona"] == $value["user"]){
+				//print_r($value);
+				$numVittorie = $value["score"];
+			}
+		}
+
+
+		$newsInsertable = [
+			"score" => $numVittorie + 0.5  ,
+		];
+		$newsStore->where( 'user', '=', $utente )->update( $newsInsertable );
+	}
+	//////////
+
 		function endSessionGame() {
-			$_SESSION = array();
-			session_destroy();
+			unset($_SESSION["player"]);
+			unset($_SESSION["computer"]);
+			unset($_SESSION["meglio"]);
+			unset($_SESSION["vittoria"]);
 			header("location: Modalita.php");
 		}
 		
@@ -14,8 +43,10 @@
 		}
 		
 		function endSessionMenu() {
-			$_SESSION = array();
-			session_destroy();
+			unset($_SESSION["player"]);
+			unset($_SESSION["computer"]);
+			unset($_SESSION["meglio"]);
+			unset($_SESSION["vittoria"]);
 			header("location: Menu.php");
 		}
 		
@@ -43,7 +74,19 @@
 		<div class="centro">
 			<div class="text">
 			<?php if($_SESSION["player"] > $_SESSION["computer"]){
-					?><style>body{background-color:#ffcc99;}</style><?php
+				   ?><style>html {
+								height: 100%;
+								letter-spacing:2px;
+							}
+
+
+							body {
+								margin: 0;
+								background-repeat: no-repeat;
+								background-attachment: fixed;
+								background: rgb(255,163,26);
+								background: linear-gradient(90deg, rgba(255,163,26,1) 0%, rgba(255,209,26,1) 100%);
+							}</style><?php
 					echo "HAI VINTO";?>
 					<p>
 						<a href="WinLoss.php?game=true" class="retrybuttonWin" style="text-decoration:none" onclick="endSessionGame()">Riprova</a>
